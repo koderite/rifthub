@@ -91,30 +91,30 @@ export default function AboutSection() {
       ref={sectionRef}
       style={{
         position: 'relative',
-        paddingTop: '160px',
-        paddingBottom: '160px',
-        backgroundColor: 'var(--void-black)',
+        paddingTop: '140px',
+        paddingBottom: '140px',
+        backgroundColor: 'var(--paper)',
       }}
     >
-      <div style={{ paddingLeft: '24px', paddingRight: '24px', maxWidth: '1440px', margin: '0 auto' }}>
-        {/* Section Header */}
-        <div className="section-divider" style={{ marginBottom: '60px' }} />
-
+      <div style={{ paddingLeft: '24px', paddingRight: '24px', maxWidth: '1280px', margin: '0 auto' }}>
         <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
           {/* Left Column - Heading + Profile Image */}
           <div>
+            <div className="data-readout" style={{ marginBottom: '16px', color: 'var(--accent-cyan)' }}>
+              Who's Behind the Camera
+            </div>
             <h2
               ref={headingRef}
-           className="font-display uppercase"
+              className="font-display"
               style={{
-              fontSize: 'clamp(24px, 3.5vw, 48px)',
-              fontWeight: 700,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.05,
-              color: 'var(--text-primary)',
-            }}
-          >
-            <span style={{ color: '#00f0ff' }}>Creative at</span> Rift Stories
+                fontSize: 'clamp(26px, 3.5vw, 48px)',
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
+                lineHeight: 1.1,
+                color: 'var(--ink)',
+              }}
+            >
+              Crafting meaningful stories &amp; <span style={{ color: 'var(--accent-red)' }}>intuitive content</span>
             </h2>
 
             <div
@@ -126,27 +126,16 @@ export default function AboutSection() {
               }}
             >
               <img
-                src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/bio.jpeg"
-                alt="Rift Stories AI Content Creator — profile portrait"
+                src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/reveal.jpg"
+                alt="Rift Stories — behind the scenes of an AI content shoot"
                 loading="lazy"
                 style={{
                   width: 'clamp(240px, 20vw, 340px)',
                   height: 'clamp(300px, 25vw, 420px)',
                   objectFit: 'cover',
                   display: 'block',
-                  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                  border: '2px solid rgba(0, 240, 255, 0.3)',
-                  boxShadow: '0 0 40px rgba(0, 240, 255, 0.1)',
-                }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: '-6px',
-                  borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                  border: '1px solid rgba(0, 240, 255, 0.15)',
-                  pointerEvents: 'none',
-                  zIndex: -1,
+                  borderRadius: '20px',
+                  boxShadow: '0 20px 50px -15px rgba(28, 23, 18, 0.3)',
                 }}
               />
             </div>
@@ -192,21 +181,20 @@ export default function AboutSection() {
 
             {/* CTA */}
             <button
-              className="font-body glitch-hover"
+              className="font-body link-underline"
               onClick={() => {
                 const el = document.getElementById('contact');
                 el?.scrollIntoView({ behavior: 'smooth' });
               }}
               style={{
                 marginTop: '40px',
-                fontSize: '12px',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-                color: '#00f0ff',
+                fontSize: '13px',
+                letterSpacing: '0.02em',
+                color: 'var(--accent-cyan)',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
               }}
@@ -222,7 +210,7 @@ export default function AboutSection() {
           ref={servicesRef}
           className="services-grid"
           style={{
-            marginTop: '120px',
+            marginTop: '100px',
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '40px',
@@ -237,9 +225,9 @@ export default function AboutSection() {
                   fontWeight: 600,
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
-                  color: 'var(--text-primary)',
+                  color: 'var(--ink)',
                   paddingBottom: '16px',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderBottom: '1px solid var(--border-subtle)',
                   marginBottom: '16px',
                 }}
               >
@@ -261,7 +249,7 @@ export default function AboutSection() {
                       cursor: 'default',
                     }}
                     onMouseEnter={(e) => {
-                      (e.target as HTMLElement).style.color = '#00f0ff';
+                      (e.target as HTMLElement).style.color = 'var(--accent-cyan)';
                     }}
                     onMouseLeave={(e) => {
                       (e.target as HTMLElement).style.color = 'var(--text-muted)';

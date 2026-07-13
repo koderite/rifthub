@@ -1,5 +1,21 @@
 import { useRef, useState } from 'react';
 
+const footerLinkStyle = {
+  fontSize: '11px',
+  letterSpacing: '0.05em',
+  textTransform: 'uppercase' as const,
+  color: 'var(--text-muted)',
+  textDecoration: 'none' as const,
+  transition: 'color 0.2s ease',
+};
+
+const onEnterCyan = (e: React.MouseEvent<HTMLElement>) => {
+  (e.target as HTMLElement).style.color = 'var(--accent-cyan)';
+};
+const onLeaveMuted = (e: React.MouseEvent<HTMLElement>) => {
+  (e.target as HTMLElement).style.color = 'var(--text-muted)';
+};
+
 export default function Footer() {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const [lineScale, setLineScale] = useState(0);
@@ -9,30 +25,36 @@ export default function Footer() {
       id="contact"
       style={{
         position: 'relative',
-        height: '800px',
-        backgroundColor: 'var(--void-black)',
+        minHeight: '640px',
+        backgroundColor: 'var(--paper-alt)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        borderTop: '1px solid var(--border-subtle)',
+        padding: '80px 24px 140px',
       }}
     >
+      <div className="data-readout" style={{ marginBottom: '20px', color: 'var(--accent-red)' }}>
+        Let's Work Together
+      </div>
+
       {/* Main CTA */}
       <a
         ref={linkRef}
         href="mailto:riftstories@outlook.com"
-        className="font-display uppercase glitch-hover"
+        className="font-display"
         onMouseEnter={() => setLineScale(1)}
         onMouseLeave={() => setLineScale(0)}
         style={{
-          fontSize: 'clamp(40px, 8vw, 120px)',
+          fontSize: 'clamp(32px, 7vw, 96px)',
           fontWeight: 700,
           letterSpacing: '-0.02em',
-          color: 'var(--text-primary)',
+          color: 'var(--ink)',
           textDecoration: 'none',
           position: 'relative',
           display: 'inline-block',
+          textAlign: 'center',
         }}
       >
         Send us a Message
@@ -43,7 +65,7 @@ export default function Footer() {
             left: 0,
             width: '100%',
             height: '2px',
-            backgroundColor: '#00f0ff',
+            backgroundColor: 'var(--accent-cyan)',
             transform: `scaleX(${lineScale})`,
             transformOrigin: 'left center',
             transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -54,9 +76,9 @@ export default function Footer() {
       <p
         className="font-body"
         style={{
-          marginTop: '40px',
+          marginTop: '32px',
           fontSize: '14px',
-          color: 'var(--text-dim)',
+          color: 'var(--text-muted)',
           letterSpacing: '0.02em',
         }}
       >
@@ -78,64 +100,13 @@ export default function Footer() {
       >
         {/* Left links */}
         <div className="footer-links" style={{ display: 'flex', gap: '40px' }}>
-          <a
-            href="#manifesto"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
-          >
+          <a href="#portfolio" className="font-body" style={footerLinkStyle} onMouseEnter={onEnterCyan} onMouseLeave={onLeaveMuted}>
             Works
           </a>
-          <a
-            href="#about"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
-          >
+          <a href="#about" className="font-body" style={footerLinkStyle} onMouseEnter={onEnterCyan} onMouseLeave={onLeaveMuted}>
             About
           </a>
-          <a
-            href="#contact"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
-          >
+          <a href="#contact" className="font-body" style={footerLinkStyle} onMouseEnter={onEnterCyan} onMouseLeave={onLeaveMuted}>
             Contact
           </a>
         </div>
@@ -146,21 +117,10 @@ export default function Footer() {
             href="https://www.instagram.com/rift.stories?igsh=MTFkN3Y3N2Fsa2pnOA%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
+            className="font-body"
+            style={footerLinkStyle}
+            onMouseEnter={onEnterCyan}
+            onMouseLeave={onLeaveMuted}
           >
             Instagram
           </a>
@@ -168,21 +128,10 @@ export default function Footer() {
             href="https://youtube.com/@riftstories_1?si=sX5fCVOQE0A3ZinP"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
+            className="font-body"
+            style={footerLinkStyle}
+            onMouseEnter={onEnterCyan}
+            onMouseLeave={onLeaveMuted}
           >
             YouTube
           </a>
@@ -190,21 +139,10 @@ export default function Footer() {
             href="https://www.facebook.com/share/1LJKHAa557/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
+            className="font-body"
+            style={footerLinkStyle}
+            onMouseEnter={onEnterCyan}
+            onMouseLeave={onLeaveMuted}
           >
             Facebook
           </a>
@@ -212,51 +150,26 @@ export default function Footer() {
             href="https://www.tiktok.com/@riftstories1?_r=1&_t=ZN-9737y3PFu46"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
+            className="font-body"
+            style={footerLinkStyle}
+            onMouseEnter={onEnterCyan}
+            onMouseLeave={onLeaveMuted}
           >
             TikTok
           </a>
           <a
-            href="mailto:hello@aivision.studio"
-            className="font-body glitch-hover"
-            style={{
-              fontSize: '11px',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.color = '#00f0ff';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.color = 'var(--text-muted)';
-            }}
+            href="mailto:riftstories@outlook.com"
+            className="font-body"
+            style={footerLinkStyle}
+            onMouseEnter={onEnterCyan}
+            onMouseLeave={onLeaveMuted}
           >
             Email
           </a>
         </div>
 
         {/* Right - year */}
-        <span
-          className="data-readout"
-          style={{           color: 'var(--text-dim)' }}
-        >
+        <span className="data-readout" style={{ color: 'var(--text-dim)' }}>
           &copy; 2024&ndash;2026
         </span>
       </div>

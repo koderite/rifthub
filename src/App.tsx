@@ -6,12 +6,14 @@ import { Agentation } from 'agentation';
 
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
-import HeroWaveform from './sections/HeroWaveform';
+import Hero from './sections/Hero';
+import StatsSection from './sections/StatsSection';
+import ProcessSection from './sections/ProcessSection';
 import AboutSection from './sections/AboutSection';
 import ManifestoSection from './sections/ManifestoSection';
-import SelectedArchives from './sections/SelectedArchives';
-import GlassInterface from './sections/GlassInterface';
-import RealityCylinder from './sections/RealityCylinder';
+import PortfolioSection from './sections/PortfolioSection';
+import ServicesPackagesSection from './sections/ServicesPackagesSection';
+import FAQSection from './sections/FAQSection';
 import Footer from './sections/Footer';
 import ContactWidgets from './components/ContactWidgets';
 
@@ -45,7 +47,7 @@ function App() {
   return (
     <div
       style={{
-        backgroundColor: 'var(--void-black)',
+        backgroundColor: 'var(--paper)',
         minHeight: '100vh',
       }}
     >
@@ -54,29 +56,37 @@ function App() {
       <Navigation />
 
       <main>
-        {/* 1. Hero - Waveform Engine */}
-        <HeroWaveform />
+        {/* 1. Hero */}
+        <Hero />
 
-        {/* 2. About - Who We Are */}
+        {/* 2. Stats / Metrics */}
+        <StatsSection />
+
+        {/* 3. Process */}
+        <ProcessSection />
+
+        {/* 4. About - Who We Are */}
         <AboutSection />
 
-        {/* 3. Manifesto - Scroll-Scrubbed Video Reveal */}
+        {/* 5. Manifesto - Big statement */}
         <ManifestoSection />
 
-        {/* 4. Selected Archives */}
-        <SelectedArchives />
-
-        {/* 5. Glass Interface */}
+        {/* 6. Portfolio grid */}
         <div className="content-visibility-auto">
-          <GlassInterface />
+          <PortfolioSection />
         </div>
 
-        {/* 6. Reality Cylinder */}
+        {/* 7. Packages */}
         <div className="content-visibility-auto">
-          <RealityCylinder />
+          <ServicesPackagesSection />
         </div>
 
-        {/* 7. Footer / Contact */}
+        {/* 8. FAQ */}
+        <div className="content-visibility-auto">
+          <FAQSection />
+        </div>
+
+        {/* 9. Footer / Contact */}
         <div className="content-visibility-auto">
           <Footer />
         </div>

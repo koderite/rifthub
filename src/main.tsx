@@ -8,7 +8,7 @@ createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <ThemeProvider
       attribute="data-theme"
-      defaultTheme="dark"
+      forcedTheme="light"
       enableSystem={false}
       storageKey="rift-theme"
     >

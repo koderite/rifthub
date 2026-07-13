@@ -13,7 +13,10 @@ export default defineConfig({
   ],
 
   server: {
-    port: 3000,
+    host: '0.0.0.0',
+    port: 5000,
+    allowedHosts: true,
+    strictPort: true,
   },
 
   resolve: {
@@ -30,9 +33,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Three.js and its ecosystem — large library, changes infrequently
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
-
           // Animation libraries
           animation: ['gsap', 'framer-motion', 'lenis'],
 
