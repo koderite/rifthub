@@ -22,13 +22,6 @@ function PauseIcon() {
 
 const projects = [
   {
-    title: 'Luxury Bag UGC',
-    category: 'Exotic Brand — User-Generated Content',
-    description:
-      'A cinematic UGC ad for a leading exotic luxury bag brand. Every frame highlights the meticulous craftsmanship, rich texture, and the quiet confidence of understated elegance.',
-    image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=900&h=1100&fit=crop&q=80',
-  },
-  {
     title: 'Amura Collection',
     category: 'Luxury Clothing Brand — Showcase',
     description:
