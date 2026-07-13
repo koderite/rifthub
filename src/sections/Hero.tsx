@@ -145,7 +145,7 @@ export default function Hero() {
             <div
               style={{
                 position: 'relative',
-                borderRadius: '28px',
+                borderRadius: '50% 50% 24px 24px',
                 overflow: 'hidden',
                 aspectRatio: '4 / 5',
                 backgroundColor: 'var(--paper-alt)',

@@ -81,6 +81,7 @@ export default function StatsSection() {
               overflow: 'hidden',
               aspectRatio: '4 / 3.4',
               boxShadow: 'var(--card-shadow, 0 30px 60px -25px rgba(28,23,18,0.25))',
+              marginTop: '48px',
             }}
           >
             <video

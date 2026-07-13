@@ -1,8 +1,24 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+function PlayIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)" style={{ marginLeft: '2px' }}>
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)">
+      <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+    </svg>
+  );
+}
 
 const projects = [
   {
@@ -56,6 +72,93 @@ const projects = [
   },
 ];
 
+function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+    }
+  };
+
+  return (
+    <div className="portfolio-card" style={{ position: 'relative' }}>
+      <div
+        style={{
+          position: 'relative',
+          borderRadius: '18px',
+          overflow: 'hidden',
+          aspectRatio: '4 / 5',
+          backgroundColor: 'var(--paper-alt)',
+        }}
+      >
+        {project.video ? (
+          <>
+            <video
+              ref={videoRef}
+              src={project.video}
+              aria-label={project.title}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', cursor: 'pointer' }}
+              onClick={togglePlay}
+            />
+            <button
+              onClick={togglePlay}
+              aria-label={playing ? `Pause ${project.title}` : `Play ${project.title}`}
+              style={{
+                position: 'absolute',
+                bottom: '16px',
+                right: '16px',
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                border: 'none',
+                backgroundColor: 'rgba(247, 242, 234, 0.92)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                opacity: playing ? 0 : 1,
+                transition: 'opacity 0.2s ease, transform 0.2s ease',
+                pointerEvents: 'auto',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              {playing ? <PauseIcon /> : <PlayIcon />}
+            </button>
+          </>
+        ) : (
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+          />
+        )}
+      </div>
+      <h3 className="font-display" style={{ fontSize: '19px', fontWeight: 700, color: 'var(--ink)', marginTop: '18px', letterSpacing: '-0.01em' }}>
+        {project.title}
+      </h3>
+      <p className="font-body" style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', marginTop: '6px' }}>
+        {project.description}
+      </p>
+    </div>
+  );
+}
+
 export default function PortfolioSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -100,70 +203,7 @@ export default function PortfolioSection() {
 
         <div className="portfolio-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
           {projects.map((project) => (
-            <div key={project.title} className="portfolio-card" style={{ position: 'relative' }}>
-              <div
-                style={{
-                  position: 'relative',
-                  borderRadius: '18px',
-                  overflow: 'hidden',
-                  aspectRatio: '4 / 5',
-                  backgroundColor: 'var(--paper-alt)',
-                }}
-              >
-                {project.video ? (
-                  <video
-                    src={project.video}
-                    aria-label={project.title}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLVideoElement;
-                      el.style.transform = 'scale(1.05)';
-                      el.play().catch(() => {});
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLVideoElement;
-                      el.style.transform = 'scale(1)';
-                      el.pause();
-                    }}
-                  />
-                ) : (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-                  />
-                )}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '16px',
-                    left: '16px',
-                    backgroundColor: 'rgba(247, 242, 234, 0.92)',
-                    color: 'var(--ink)',
-                    fontSize: '11px',
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    padding: '6px 12px',
-                    borderRadius: '999px',
-                  }}
-                >
-                  {project.category}
-                </div>
-              </div>
-              <h3 className="font-display" style={{ fontSize: '19px', fontWeight: 700, color: 'var(--ink)', marginTop: '18px', letterSpacing: '-0.01em' }}>
-                {project.title}
-              </h3>
-              <p className="font-body" style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', marginTop: '6px' }}>
-                {project.description}
-              </p>
-            </div>
+            <PortfolioCard key={project.title} project={project} />
           ))}
         </div>
       </div>
