@@ -111,13 +111,12 @@ export default function Navigation() {
           </button>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden"
+            className="md:hidden flex"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             style={{
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              display: 'flex',
               flexDirection: 'column',
               gap: '5px',
               padding: '8px',

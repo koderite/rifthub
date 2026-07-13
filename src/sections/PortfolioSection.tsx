@@ -7,39 +7,52 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: 'Luxury Bag UGC',
-    category: 'UGC / Luxury Goods',
-    description: 'A cinematic UGC ad highlighting craftsmanship and understated elegance for a luxury bag brand.',
+    category: 'Exotic Brand — User-Generated Content',
+    description:
+      'A cinematic UGC ad for a leading exotic luxury bag brand. Every frame highlights the meticulous craftsmanship, rich texture, and the quiet confidence of understated elegance.',
     image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=900&h=1100&fit=crop&q=80',
   },
   {
     title: 'Amura Collection',
-    category: 'Brand Showcase',
-    description: 'A visual showcase where contemporary design meets timeless tailoring for the Amura label.',
-    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900&h=1100&fit=crop&q=80',
+    category: 'Luxury Clothing Brand — Showcase',
+    description:
+      'A visual showcase for Amura, where contemporary design meets timeless tailoring. Each piece tells a story of refined craftsmanship and bold sophistication.',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/fashion-showcase.mp4',
   },
   {
     title: 'Fashion Concert Runway',
-    category: 'Live Runway',
-    description: 'An electrifying runway film where music and design collide in an immersive live experience.',
-    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&h=1100&fit=crop&q=80',
+    category: 'Live Runway — Music & Fashion',
+    description:
+      'An electrifying fashion concert runway where music and design collide. Models move to the rhythm, creating an immersive live experience that blurs the line between performance and art.',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/fashion-concert.mp4',
   },
   {
     title: 'Folk Tale',
-    category: 'African Drama',
-    description: 'A coming-of-age short film about discipline, ambition, and channeling energy into what matters.',
-    image: 'https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=900&h=1100&fit=crop&q=80',
+    category: 'African Drama — Coming of Age Story',
+    description:
+      "A spoilt Nigerian teenager falls for his secondary school teacher. She turns him down gently and tells him to channel that energy into his books. He listens. He graduates with a first class.",
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/folk-tale.mp4',
   },
   {
     title: 'Hotel UGC Ad',
-    category: 'Hospitality',
-    description: 'A UGC-style ad capturing the ambience and service of Palm Classic Hotel, Benin City.',
+    category: 'Palm Classic Hotel, Benin City',
+    description:
+      'A UGC ad for Palm Classic Hotel in Benin City. We captured the ambience, the poolside, the restaurant, and the kind of customer service that makes you want to book a stay.',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&h=1100&fit=crop&q=80',
   },
   {
     title: 'Wonder Realm',
     category: 'Animated Storytelling',
-    description: 'AI-powered animation bringing vibrant worlds and playful characters to life for all ages.',
-    image: 'https://images.unsplash.com/photo-1617957710614-7d0cb90a00e8?w=900&h=1100&fit=crop&q=80',
+    description:
+      'AI-powered animation that brings imagination to life. Vibrant worlds and playful characters crafted for audiences of all ages.',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/kids-animation.mp4',
+  },
+  {
+    title: 'Gas & Go',
+    category: 'Business Ad for a Cooking Gas Station',
+    description:
+      'A high-energy commercial for a cooking gas station that delivers straight to your door. We show how they make cooking easy and reliable, all through the lens of AI-driven storytelling.',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/marketting-ad-cooking-gas.mp4',
   },
 ];
 
@@ -97,14 +110,36 @@ export default function PortfolioSection() {
                   backgroundColor: 'var(--paper-alt)',
                 }}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    aria-label={project.title}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLVideoElement;
+                      el.style.transform = 'scale(1.05)';
+                      el.play().catch(() => {});
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLVideoElement;
+                      el.style.transform = 'scale(1)';
+                      el.pause();
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+                  />
+                )}
                 <div
                   style={{
                     position: 'absolute',

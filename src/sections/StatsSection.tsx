@@ -73,7 +73,7 @@ export default function StatsSection() {
             </div>
           </div>
 
-          {/* Right - Image */}
+          {/* Right - Video */}
           <div
             style={{
               position: 'relative',
@@ -83,10 +83,13 @@ export default function StatsSection() {
               boxShadow: 'var(--card-shadow, 0 30px 60px -25px rgba(28,23,18,0.25))',
             }}
           >
-            <img
-              src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/glass-bg.jpg"
-              alt="Behind the scenes of an AI content production"
-              loading="lazy"
+            <video
+              src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/ugc-bag.mp4"
+              aria-label="Behind the scenes of an AI content production"
+              autoPlay
+              muted
+              loop
+              playsInline
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>

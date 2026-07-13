@@ -126,7 +126,7 @@ export default function AboutSection() {
               }}
             >
               <img
-                src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/reveal.jpg"
+                src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/glass-bg.jpg"
                 alt="Rift Stories — behind the scenes of an AI content shoot"
                 loading="lazy"
                 style={{
