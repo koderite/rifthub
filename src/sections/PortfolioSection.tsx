@@ -47,7 +47,7 @@ const projects = [
     category: 'Palm Classic Hotel, Benin City',
     description:
       'A UGC ad for Palm Classic Hotel in Benin City. We captured the ambience, the poolside, the restaurant, and the kind of customer service that makes you want to book a stay.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&h=1100&fit=crop&q=80',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/ugc-hotel.mp4',
   },
   {
     title: 'Wonder Realm',
@@ -91,57 +91,44 @@ function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
           border: '1px solid rgba(255,255,255,0.08)',
         }}
       >
-        {project.video ? (
-          <>
-            <video
-              ref={videoRef}
-              src={project.video}
-              aria-label={project.title}
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              onPlay={() => setPlaying(true)}
-              onPause={() => setPlaying(false)}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', cursor: 'pointer' }}
-              onClick={togglePlay}
-            />
-            <button
-              onClick={togglePlay}
-              aria-label={playing ? `Pause ${project.title}` : `Play ${project.title}`}
-              style={{
-                position: 'absolute',
-                bottom: '16px',
-                right: '16px',
-                width: '44px',
-                height: '44px',
-                borderRadius: '50%',
-                border: 'none',
-                backgroundColor: 'rgba(255,255,255,0.9)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                opacity: playing ? 0 : 1,
-                transition: 'opacity 0.2s ease, transform 0.2s ease',
-                pointerEvents: 'auto',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-            >
-              {playing ? <PauseIcon /> : <PlayIcon />}
-            </button>
-          </>
-        ) : (
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
-          />
-        )}
+        <video
+          ref={videoRef}
+          src={project.video}
+          aria-label={project.title}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', cursor: 'pointer' }}
+          onClick={togglePlay}
+        />
+        <button
+          onClick={togglePlay}
+          aria-label={playing ? `Pause ${project.title}` : `Play ${project.title}`}
+          style={{
+            position: 'absolute',
+            bottom: '16px',
+            right: '16px',
+            width: '44px',
+            height: '44px',
+            borderRadius: '50%',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,0.9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            opacity: playing ? 0 : 1,
+            transition: 'opacity 0.2s ease, transform 0.2s ease',
+            pointerEvents: 'auto',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+        >
+          {playing ? <PauseIcon /> : <PlayIcon />}
+        </button>
       </div>
       <h3 className="font-display" style={{ fontSize: '19px', fontWeight: 700, color: 'var(--paper)', marginTop: '18px', letterSpacing: '-0.01em' }}>
         {project.title}
