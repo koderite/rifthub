@@ -127,7 +127,7 @@ export default function AboutSection() {
             >
               <img
                 src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/glass-bg.jpg"
-                alt="Rift Stories — behind the scenes of an AI content shoot"
+                alt="Rift Hub — behind the scenes of an AI content shoot"
                 loading="lazy"
                 style={{
                   width: 'clamp(240px, 20vw, 340px)',
@@ -176,7 +176,7 @@ export default function AboutSection() {
                 marginTop: '24px',
               }}
             >
-              Creator at Rift Stories
+              Creator at Rift Hub
             </p>
 
             {/* CTA */}

@@ -3,6 +3,7 @@ import gsap from 'gsap';
 
 const pills = ['AI Storytelling', 'Brand Films & UGC', 'Prompt Engineering'];
 
+
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +62,7 @@ export default function Hero() {
                 marginBottom: '28px',
               }}
             >
-              Rift Stories —<br />
+              Rift Hub —<br />
               AI Content Creator{' '}
               <span style={{ color: 'var(--accent-red)', fontStyle: 'italic' }}>&amp; Visual Storyteller</span>
             </h1>
@@ -154,30 +155,12 @@ export default function Hero() {
             >
               <img
                 src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/bio.jpeg"
-                alt="Rift Stories — AI content creator portrait"
+                alt="Rift Hub — AI content creator portrait"
                 loading="eager"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
 
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '-24px',
-                left: '-24px',
-                backgroundColor: 'var(--ink)',
-                color: 'var(--paper)',
-                borderRadius: '18px',
-                padding: '18px 22px',
-                boxShadow: '0 20px 40px -10px rgba(28, 23, 18, 0.35)',
-                maxWidth: '220px',
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '26px', fontWeight: 700 }}>4.2M+</div>
-              <div className="font-body" style={{ fontSize: '11px', letterSpacing: '0.05em', textTransform: 'uppercase', opacity: 0.7, marginTop: '4px' }}>
-                Views generated for clients
-              </div>
-            </div>
           </div>
         </div>
       </div>

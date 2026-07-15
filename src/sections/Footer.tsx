@@ -22,7 +22,6 @@ export default function Footer() {
 
   return (
     <footer
-      id="contact"
       style={{
         position: 'relative',
         minHeight: '640px',

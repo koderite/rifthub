@@ -39,7 +39,7 @@ export default function StatsSection() {
   return (
     <section
       ref={sectionRef}
-      style={{ backgroundColor: 'var(--paper)', paddingTop: '120px', paddingBottom: '120px' }}
+      style={{ backgroundColor: 'var(--paper-alt)', paddingTop: '120px', paddingBottom: '120px' }}
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
         <div

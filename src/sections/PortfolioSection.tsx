@@ -87,7 +87,8 @@ function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
           borderRadius: '18px',
           overflow: 'hidden',
           aspectRatio: '4 / 5',
-          backgroundColor: 'var(--paper-alt)',
+          backgroundColor: 'rgba(255,255,255,0.05)',
+          border: '1px solid rgba(255,255,255,0.08)',
         }}
       >
         {project.video ? (
@@ -116,7 +117,7 @@ function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
                 height: '44px',
                 borderRadius: '50%',
                 border: 'none',
-                backgroundColor: 'rgba(247, 242, 234, 0.92)',
+                backgroundColor: 'rgba(255,255,255,0.9)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -142,10 +143,10 @@ function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
           />
         )}
       </div>
-      <h3 className="font-display" style={{ fontSize: '19px', fontWeight: 700, color: 'var(--ink)', marginTop: '18px', letterSpacing: '-0.01em' }}>
+      <h3 className="font-display" style={{ fontSize: '19px', fontWeight: 700, color: 'var(--paper)', marginTop: '18px', letterSpacing: '-0.01em' }}>
         {project.title}
       </h3>
-      <p className="font-body" style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', marginTop: '6px' }}>
+      <p className="font-body" style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(247,242,234,0.55)', marginTop: '6px' }}>
         {project.description}
       </p>
     </div>
@@ -178,18 +179,18 @@ export default function PortfolioSection() {
   }, []);
 
   return (
-    <section id="portfolio" ref={sectionRef} style={{ backgroundColor: 'var(--paper)', paddingTop: '140px', paddingBottom: '140px' }}>
+    <section id="portfolio" ref={sectionRef} style={{ backgroundColor: 'var(--ink)', paddingTop: '140px', paddingBottom: '140px' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px', marginBottom: '56px' }}>
           <div>
-            <div className="data-readout" style={{ marginBottom: '16px', color: 'var(--accent-red)' }}>
+            <div className="data-readout" style={{ marginBottom: '16px', color: 'var(--accent-cyan)' }}>
               Selected Work
             </div>
-            <h2 className="font-display" style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: 'var(--ink)' }}>
+            <h2 className="font-display" style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: 'var(--paper)' }}>
               Some of my creations<br />and stories
             </h2>
           </div>
-          <p className="font-body" style={{ fontSize: '14px', color: 'var(--text-muted)', maxWidth: '320px' }}>
+          <p className="font-body" style={{ fontSize: '14px', color: 'rgba(247,242,234,0.45)', maxWidth: '320px' }}>
             A mix of commercials, UGC, and short-form storytelling produced end-to-end with AI tools.
           </p>
         </div>

@@ -8,11 +8,10 @@ import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
 import Hero from './sections/Hero';
 import StatsSection from './sections/StatsSection';
-import ProcessSection from './sections/ProcessSection';
 import AboutSection from './sections/AboutSection';
 import ManifestoSection from './sections/ManifestoSection';
 import PortfolioSection from './sections/PortfolioSection';
-import ServicesPackagesSection from './sections/ServicesPackagesSection';
+import ContactFormSection from './sections/ServicesPackagesSection';
 import FAQSection from './sections/FAQSection';
 import Footer from './sections/Footer';
 import ContactWidgets from './components/ContactWidgets';
@@ -62,10 +61,7 @@ function App() {
         {/* 2. Stats / Metrics */}
         <StatsSection />
 
-        {/* 3. Process */}
-        <ProcessSection />
-
-        {/* 4. About - Who We Are */}
+        {/* 3. About - Who We Are */}
         <AboutSection />
 
         {/* 5. Manifesto - Big statement */}
@@ -76,9 +72,9 @@ function App() {
           <PortfolioSection />
         </div>
 
-        {/* 7. Packages */}
+        {/* 6. Contact Form */}
         <div className="content-visibility-auto">
-          <ServicesPackagesSection />
+          <ContactFormSection />
         </div>
 
         {/* 8. FAQ */}

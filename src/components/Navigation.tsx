@@ -49,9 +49,6 @@ export default function Navigation() {
       <button onClick={() => scrollTo('about')} style={linkStyle} className="link-underline">
         About
       </button>
-      <button onClick={() => scrollTo('process')} style={linkStyle} className="link-underline">
-        Process
-      </button>
       <button onClick={() => scrollTo('faq')} style={linkStyle} className="link-underline">
         FAQ
       </button>
@@ -81,7 +78,7 @@ export default function Navigation() {
           aria-label="Scroll to top"
         >
           <span style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--accent-red)', display: 'inline-block' }} />
-          Rift Stories
+          Rift Hub
         </span>
 
         <div className="hidden md:flex items-center gap-10">
@@ -170,7 +167,6 @@ export default function Navigation() {
         {[
           { label: 'Portfolio', id: 'portfolio' },
           { label: 'About', id: 'about' },
-          { label: 'Process', id: 'process' },
           { label: 'FAQ', id: 'faq' },
           { label: 'Contact', id: 'contact' },
         ].map((item) => (
