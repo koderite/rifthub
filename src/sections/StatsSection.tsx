@@ -69,7 +69,7 @@ export default function StatsSection() {
             }}
           >
             <video
-              src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/ugc-hotel.mp4"
+              src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/ugc-bag.mp4"
               aria-label="Behind the scenes of an AI content production"
               autoPlay
               muted

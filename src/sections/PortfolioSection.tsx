@@ -47,7 +47,7 @@ const projects = [
     category: 'Palm Classic Hotel, Benin City',
     description:
       'A UGC ad for Palm Classic Hotel in Benin City. We captured the ambience, the poolside, the restaurant, and the kind of customer service that makes you want to book a stay.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&h=1100&fit=crop&q=80',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/ugc-hotel.mp4',
   },
   {
     title: 'Wonder Realm',
