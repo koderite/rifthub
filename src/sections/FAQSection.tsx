@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     q: 'What exactly is AI-generated content?',
-    a: 'It\'s content — video, image, or motion — created with AI tools guided by human direction: scripting, prompt engineering, art direction, and editing. The craft is still entirely human; AI is the production tool.',
+    a: 'It\'s content - video, image, or motion - created with AI tools guided by human direction: scripting, prompt engineering, art direction, and editing. The craft is still entirely human; AI is the production tool.',
   },
   {
     q: 'How long does a typical project take?',
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Do you offer revisions?',
-    a: 'Yes — every package includes revision rounds so the final piece matches your brief. Scope and round count are outlined before we start.',
+    a: 'Yes - every package includes revision rounds so the final piece matches your brief. Scope and round count are outlined before we start.',
   },
   {
     q: 'What platforms do you create for?',
@@ -41,7 +41,7 @@ export default function FAQSection() {
               Frequently asked questions
             </h2>
             <p className="font-body" style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-muted)', marginTop: '16px', maxWidth: '360px' }}>
-              Can't find what you're after? Reach out directly — Contact links are in the footer.
+              Can't find what you're after? Reach out directly - Contact links are in the footer.
             </p>
           </div>
 

@@ -82,7 +82,7 @@ export default function ManifestoSection() {
             marginRight: 'auto',
           }}
         >
-          Technology is only the toolset. The stories still need a point of view —
+          Technology is only the toolset. The stories still need a point of view -
           that's where every project starts.
         </p>
       </div>

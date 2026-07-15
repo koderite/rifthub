@@ -23,21 +23,21 @@ function PauseIcon() {
 const projects = [
   {
     title: 'Amura Collection',
-    category: 'Luxury Clothing Brand — Showcase',
+    category: 'Luxury Clothing Brand - Showcase',
     description:
       'A visual showcase for Amura, where contemporary design meets timeless tailoring. Each piece tells a story of refined craftsmanship and bold sophistication.',
     video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/fashion-showcase.mp4',
   },
   {
     title: 'Fashion Concert Runway',
-    category: 'Live Runway — Music & Fashion',
+    category: 'Live Runway - Music & Fashion',
     description:
       'An electrifying fashion concert runway where music and design collide. Models move to the rhythm, creating an immersive live experience that blurs the line between performance and art.',
     video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/fashion-concert.mp4',
   },
   {
     title: 'Folk Tale',
-    category: 'African Drama — Coming of Age Story',
+    category: 'African Drama - Coming of Age Story',
     description:
       "A spoilt Nigerian teenager falls for his secondary school teacher. She turns him down gently and tells him to channel that energy into his books. He listens. He graduates with a first class.",
     video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/folk-tale.mp4',

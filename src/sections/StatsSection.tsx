@@ -4,13 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  { value: '98%', label: 'Brief Accuracy on First Cut' },
-  { value: '4.2M+', label: 'Views Generated for Clients' },
-  { value: '150+', label: 'Projects Delivered' },
-  { value: '3x', label: 'Average Engagement Lift' },
-];
-
 export default function StatsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -56,21 +49,12 @@ export default function StatsSection() {
             </h2>
             <p className="font-body" style={{ fontSize: '15px', lineHeight: 1.75, color: 'var(--text-secondary)', maxWidth: '440px' }}>
               Every commercial, UGC ad, and short film is built around a clear
-              creative brief and a measurable outcome — not just a pretty frame.
+              creative brief and a measurable outcome - not just a pretty frame.
             </p>
 
-            <div className="stats-grid-cols" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginTop: '48px' }}>
-              {stats.map((stat) => (
-                <div key={stat.label} className="stat-card">
-                  <div className="font-display" style={{ fontSize: 'clamp(30px, 4vw, 44px)', fontWeight: 700, color: 'var(--ink)', letterSpacing: '-0.02em' }}>
-                    {stat.value}
-                  </div>
-                  <div className="font-body" style={{ fontSize: '12px', letterSpacing: '0.03em', color: 'var(--text-muted)', marginTop: '6px' }}>
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="font-body" style={{ fontSize: '14px', lineHeight: 1.7, color: 'var(--text-muted)', marginTop: '32px', maxWidth: '440px' }}>
+              Every production starts with a brief, a creative concept, and a clear sense of what the audience needs to feel.
+            </p>
           </div>
 
           {/* Right - Video */}

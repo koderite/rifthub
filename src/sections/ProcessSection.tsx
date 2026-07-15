@@ -8,7 +8,7 @@ const steps = [
   {
     num: '01',
     title: 'Concept & Script',
-    desc: 'We define the brief, audience, and hook — then write a script built for the first three seconds.',
+    desc: 'We define the brief, audience, and hook - then write a script built for the first three seconds.',
   },
   {
     num: '02',

@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/',
 
   plugins: [
-    // Only use inspectAttr in dev mode — excluded from production builds
+    // Only use inspectAttr in dev mode - excluded from production builds
     react(),
   ],
 

@@ -62,7 +62,7 @@ export default function Hero() {
                 marginBottom: '28px',
               }}
             >
-              Rift Hub —<br />
+              Rift Hub -<br />
               AI Content Creator{' '}
               <span style={{ color: 'var(--accent-red)', fontStyle: 'italic' }}>&amp; Visual Storyteller</span>
             </h1>
@@ -155,7 +155,7 @@ export default function Hero() {
             >
               <img
                 src="https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/bio.jpeg"
-                alt="Rift Hub — AI content creator portrait"
+                alt="Rift Hub - AI content creator portrait"
                 loading="eager"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />

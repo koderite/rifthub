@@ -54,7 +54,7 @@ export default function ContactFormSection() {
     e.preventDefault();
     if (!name || !email || selectedServices.length === 0) return;
     setSubmitting(true);
-    // Simulate async send — wire up real endpoint here
+    // Simulate async send - wire up real endpoint here
     await new Promise((res) => setTimeout(res, 1200));
     setSubmitting(false);
     setSubmitted(true);
@@ -94,7 +94,7 @@ export default function ContactFormSection() {
             alignItems: 'flex-start',
           }}
         >
-          {/* Left — label + intro */}
+          {/* Left - label + intro */}
           <div style={{ position: 'sticky', top: '120px' }}>
             <div className="data-readout" style={{ marginBottom: '16px', color: 'var(--accent-cyan)' }}>
               Get In Touch
@@ -150,7 +150,7 @@ export default function ContactFormSection() {
             </div>
           </div>
 
-          {/* Right — form */}
+          {/* Right - form */}
           <div>
             {submitted ? (
               <div
