@@ -63,6 +63,13 @@ const projects = [
       'A high-energy commercial for a cooking gas station that delivers straight to your door. We show how they make cooking easy and reliable, all through the lens of AI-driven storytelling.',
     video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/marketting-ad-cooking-gas.mp4',
   },
+  {
+    title: 'Vela',
+    category: 'Animated Fantasy Adventure',
+    description:
+      'A teenage island girl recruits a washed-up demigod to return a stolen magical heart and save her dying homeland from a volcanic curse. She battles pirates, outwits a giant crab, and discovers she\'s heir to a lost legacy of legendary seafarers.',
+    video: 'https://bvhrxctzw3eenxbl.public.blob.vercel-storage.com/VID-20260716-WA0006.mp4',
+  },
 ];
 
 function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
