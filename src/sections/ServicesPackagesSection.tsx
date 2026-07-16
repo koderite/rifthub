@@ -50,14 +50,31 @@ export default function ContactFormSection() {
     );
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !email || selectedServices.length === 0) return;
     setSubmitting(true);
-    // Simulate async send - wire up real endpoint here
-    await new Promise((res) => setTimeout(res, 1200));
-    setSubmitting(false);
-    setSubmitted(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "44583642-4009-4cb2-a2ec-591a517a59d1");
+    formData.append("services", selectedServices.join(", "));
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        console.error("Web3Form error:", data);
+        setSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitting(false);
+    }
   };
 
   const inputStyle = {
@@ -249,6 +266,7 @@ export default function ContactFormSection() {
                       type="text"
                       required
                       placeholder="Your name"
+                      name="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       style={inputStyle}
@@ -265,6 +283,7 @@ export default function ContactFormSection() {
                       type="email"
                       required
                       placeholder="your@email.com"
+                      name="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       style={inputStyle}
@@ -281,8 +300,9 @@ export default function ContactFormSection() {
                   </label>
                   <textarea
                     id="contact-message"
-                    placeholder="What's your idea? Who's your audience? Any deadlines?"
-                    value={message}
+                      placeholder="What's your idea? Who's your audience? Any deadlines?"
+                      name="message"
+                      value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={5}
                     style={{ ...inputStyle, resize: 'vertical', lineHeight: 1.7 }}
