@@ -95,7 +95,6 @@ function PortfolioCard({ project }: { project: (typeof projects)[number] }) {
           ref={videoRef}
           src={project.video}
           aria-label={project.title}
-          muted
           loop
           playsInline
           preload="metadata"
